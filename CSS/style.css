@@ -1,6 +1,6 @@
 :root {
   --color1: rgb(255, 255, 255);
-  --color2: rgb(255, 153, 0);
+  --color2: rgb(168, 227, 230);
   --color3: rgba(11, 194, 211, 0.623);
   --color4: black;
   --fondo: rgb(111, 111, 119);
@@ -141,7 +141,7 @@ img {
 header {
   width: 100%;
   height: 600px;
-  background: url(/IMAGENES/logo.jpg);
+  background: url(/IMAGENES/fondoprincipal.jpg);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -154,7 +154,7 @@ nav {
 }
 
 .nav1 {
-  background: linear-gradient(45deg, #2c38d3, #5e64b4, #2c38d3, #5e64b4);
+  background: linear-gradient(45deg, #3aafa9, #5e64b4, #3aafa9, #5e64b4);
   height: 70px;
   color: var(--color2);
 }
@@ -433,7 +433,7 @@ footer {
   rgba(29,241,171,.45),
   rgba(20, 23, 211, 0.65)
   ), */
-    url(/IMAGENES/logo.jpg);
+    url(/IMAGENES/fondoprincipal.jpg);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
