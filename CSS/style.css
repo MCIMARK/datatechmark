@@ -506,7 +506,7 @@ footer p {
     left: 0;
     /* height: 10%; */
     transition: 1s;
-    /* width: 0; */
+    width: 0;
     overflow: hidden;
     background: linear-gradient(45deg, #172423, #1c2497, #142726, #242c97);;
   }
