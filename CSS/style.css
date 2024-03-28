@@ -161,7 +161,7 @@ nav {
 }
 
 .nav2 {
-  background: linear-gradient(45deg, #172423, #1c2497, #142726, #242c97);;
+  background: linear-gradient(45deg, #172423, #1c2497, #142726, #242c97);
   height: 70px;
   color: var(--color2);
 }
@@ -180,12 +180,14 @@ nav {
 nav .enlaces a {
   display: inline-block;
   padding: 5px 0;
-  margin-right: 17px;
-  font-size: 25px;
-  font-weight: 900;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: 400;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   color: inherit;
+  font-family: "Anta", sans-serif;
+  font-style: normal;
 }
 
 nav .enlaces a:hover {
@@ -196,6 +198,7 @@ nav .enlaces a:hover {
 .logo,
 .logo img {
   height: 70px;
+  box-shadow: 4px 2px 2px var(--color2);
 }
 
 .icono {
@@ -216,8 +219,8 @@ nav .enlaces a:hover {
     -1px 1px 0 var(--color4), 1px 1px 0 var(--color4);
   overflow: hidden;
   text-align: center;
-	-webkit-text-stroke: 1px #282828;
-	text-shadow: 0px 4px 4px #00f3fc;
+	/* -webkit-text-stroke: 1px #282828;
+	text-shadow: 0px 4px 4px #00f3fc; */
 }
 
 .textos>h1 {
@@ -478,7 +481,8 @@ footer {
 
 footer p {
   font-family: "Anta", sans-serif;
-  font-weight: 400;
+  font-weight: 800;
+  font-size: 50px;
   font-style: normal;
 }
 /* footer contenedor{
@@ -500,10 +504,11 @@ footer p {
     top: 80px;
     background: var(--fondo);
     left: 0;
-    height: 100%;
+    /* height: 10%; */
     transition: 1s;
-    width: 0;
+    /* width: 0; */
     overflow: hidden;
+    background: linear-gradient(45deg, #172423, #1c2497, #142726, #242c97);;
   }
 
   .card {
@@ -532,11 +537,15 @@ footer p {
   .enlaces a {
     display: block;
     width: 100%;
-    height: 50px;
-    padding: 20px;
+    height: 30px;
+    padding: 10px;
     text-align: center;
-    background: rgba(36, 36, 36);
+    background:linear-gradient(45deg, #172423, #1c2497, #142726, #242c97);
     color: #FFF;
+    font-family: "Anta", sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    font-style: normal;
   }
 
   .textos>h1 {
