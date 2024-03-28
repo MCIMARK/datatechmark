@@ -351,18 +351,18 @@ nav .enlaces a:hover {
 }
 
 .servicios {
-  display: flex;
+  display:contents;
   color: #ffffff;
-  font-size: 30px;
+  font-size:30px;
   justify-content: space-between;
   margin:auto;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
 }
 
 .caja-servicios img {
-  width: 500px;
-  height: 300px;
-  object-fit: cover;
+  width: 300px;
+  height: 150px;
+  object-fit:cover;
 }
 
 .caja-servicios>h4 {
@@ -376,7 +376,7 @@ nav .enlaces a:hover {
 .caja-servicios>p {
   text-align:justify;
   color: var(--color1);
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -523,9 +523,9 @@ footer p {
     color: #ffffff;
     font-size: 25px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:space-around;
     margin: auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
   .galeria-work {
     display: flex;
