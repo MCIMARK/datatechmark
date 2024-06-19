@@ -1,5 +1,5 @@
 :root {
-  --color1: rgb(255, 255, 255);
+  --color1: rgb(0, 255, 191);
   --color2: rgb(0, 255, 42);
   --color3: rgba(11, 194, 211, 0.623);
   --color4: rgb(0, 0, 0);
@@ -283,7 +283,7 @@ nav .enlaces a:hover {
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: white;
+  color: rgb(212, 0, 255);
   /* color: var(--color1); */
 }
 
