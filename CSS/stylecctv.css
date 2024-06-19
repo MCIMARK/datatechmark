@@ -4,7 +4,7 @@
   --color3: rgba(11, 194, 211, 0.623);
   --color4: rgb(255, 255, 255);
   --fondo: rgb(255, 255, 255);
-  --imagendefondo: url(/IMAGENES/videos.gif);
+  --imagendefondo: url(/IMAGENES/cctv.jpg);
   --subtitulos: 25px;
   --titulos: 50px;
   --margenes: 60px;
@@ -208,7 +208,7 @@ nav {
 }
 
 .nav2 {
-  background: linear-gradient(45deg, #4bada8, #1161d8, #4bada8, #1161d8);
+  background: linear-gradient(45deg, #6ba8a5, #8ab3f1, #6ba8a5, #8ab3f1);
   height: 80px;
   color: var(--color1);
 }
@@ -342,7 +342,7 @@ nav .enlaces a:hover {
 }
 
 .about {
-  background: linear-gradient(45deg, #4bada8, #1161d8, #4bada8, #1161d8);
+  background: linear-gradient(45deg, #6ba8a5, #8ab3f1, #6ba8a5, #8ab3f1);
   height: auto;
   color: var(--color1);
 }
@@ -455,7 +455,7 @@ footer p {
     transition: 0.5s;
     width: 0;
     overflow: hidden;
-    background: linear-gradient(45deg, #4bada8, #1161d8, #4bada8, #1161d8);
+    background: linear-gradient(45deg, #6ba8a5, #8ab3f1, #6ba8a5, #8ab3f1);
   }
 
   .card {
