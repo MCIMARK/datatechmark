@@ -4,8 +4,8 @@
   --color3: rgba(0, 25, 253, 0.623);
   --color4: rgb(255, 255, 255);
   --fondo: rgb(255, 255, 255);
-  --imagendefondo: url(/IMAGENES/FONDO2.gif);
-  --gradiente: linear-gradient(45deg, #69b962,#69b962, #00ff2a, #69b962, #00ff2a);
+  --imagendefondo: url(/IMAGENES/about.jpg);
+  --gradiente: linear-gradient(45deg, #d9e6d8bd,#aab3a9, #d9e6d8bd, #aab3a9, #d9e6d8bd);
   --subtitulos: 25px;
   --titulos: 50px;
   --margenes: 60px;
@@ -59,9 +59,9 @@ table {
 }
 /* Termina el reset CSS */
 
-html{
-background-color:rgb(142, 157, 226)
-}
+/* html{
+background-color:rgb(1, 217, 255)
+} */
 
 
 
