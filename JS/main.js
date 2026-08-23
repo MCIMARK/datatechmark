@@ -44,9 +44,12 @@ function apertura() {
     }
 }
 
-window.addEventListener('load', function () {
-    $('#onload').fadeOut();
-    $('body').removeClass('hidden');
+document.addEventListener('DOMContentLoaded', function () {
+    const loader = document.getElementById('onload');
+
+    loader.style.display = 'none';
+    document.body.classList.remove('hidden');
+
     menus();
 });
 window.addEventListener('scroll', function () {
