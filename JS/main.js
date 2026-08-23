@@ -1,106 +1,131 @@
-//variables
-let nav = document.getElementById('nav');
-let menu = document.getElementById('enlaces');
-let abrir = document.getElementById('open');
-let botones = document.getElementsByClassName('btn-header');
+const nav = document.getElementById('nav');
+const menu = document.getElementById('enlaces');
+const abrir = document.getElementById('open');
+
 let cerrado = true;
-let colormenu = 'rgb(0, 255, 136)';
+
+const colormenu = 'rgb(0, 255, 136)';
 
 
+/* =========================================
+   NAVEGACIÓN
+========================================= */
 
 function menus() {
-    let desplazamiento = window.pageYOffset;
 
-    if (desplazamiento > 50) {
-        nav.classList.remove('nav1');
-        nav.className = ('nav2');
-        nav.style.transition = '0.8s';
-        abrir.style.color = colormenu;
+    const desplazamiento = window.pageYOffset;
+
+    if (desplazamiento >= 1254 && desplazamiento < 1987) {
+
+        nav.className = 'about';
+
+    } else if (desplazamiento >= 50) {
+
+        nav.className = 'nav2';
+
+    } else {
+
+        nav.className = 'nav1';
+
     }
-    if (desplazamiento >= 1254 && desplazamiento <= 1987) {
-        nav.classList.remove('nav2');
-        nav.className = ('about');
-        abrir.style.color = colormenu;
-    }
-    if (desplazamiento >= 1987) {
-        nav.classList.remove('about');
-        nav.className = ('nav2');
-        abrir.style.color = colormenu;
-    }
-    if (desplazamiento < 50) {
-        nav.classList.remove('nav2');
-        nav.className = ('nav1');
-        abrir.style.color = colormenu;
-    }
+
+    abrir.style.color = colormenu;
 }
+
+
+/* =========================================
+   MENÚ MÓVIL
+========================================= */
+
 function apertura() {
+
     if (cerrado) {
+
         menu.style.width = '70vw';
         cerrado = false;
+
     } else {
+
         menu.style.width = '0%';
         menu.style.overflow = 'hidden';
         cerrado = true;
+
     }
 }
 
+
+/* =========================================
+   PRELOADER
+========================================= */
+
 document.addEventListener('DOMContentLoaded', function () {
+
     const loader = document.getElementById('onload');
 
-    loader.style.display = 'none';
+    if (loader) {
+        loader.style.display = 'none';
+    }
+
     document.body.classList.remove('hidden');
 
     menus();
+
 });
-window.addEventListener('scroll', function () {
-    menus();
-    // console.log(window.pageYOffset);
-});
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+window.addEventListener('scroll', menus);
+
+
+/* =========================================
+   REDIMENSIONAMIENTO
+========================================= */
+
 window.addEventListener('resize', function () {
-    if (screen.width >= 700) {
+
+    if (window.innerWidth >= 700) {
+
         cerrado = true;
+
         menu.style.removeProperty('overflow');
         menu.style.removeProperty('width');
+
     }
+
 });
+
+
+/* =========================================
+   CERRAR MENÚ AL HACER CLICK FUERA
+========================================= */
+
 window.addEventListener('click', function (e) {
-    if (cerrado == false) {
-        let span = this.document.querySelector('span');
-        if (e.target !== span && e.target !== abrir){
-            menu.style.width = '0%';
-            menu.style.overflow = 'hidden';
-            cerrado = true;
-        }
-}
+
+    if (!cerrado &&
+        e.target !== abrir &&
+        !abrir.contains(e.target)) {
+
+        menu.style.width = '0%';
+        menu.style.overflow = 'hidden';
+
+        cerrado = true;
+
+    }
+
 });
-abrir.addEventListener('click', function () {
+
+
+/* =========================================
+   BOTÓN DEL MENÚ
+========================================= */
+
+abrir.addEventListener('click', function (e) {
+
+    e.stopPropagation();
+
     apertura();
+
 });
-
-
-// Función para abrir la ventana emergente con la imagen seleccionada
-function abrirVentanaEmergente(src) {
-    // Obtener el contenedor de la imagen
-    var contenedor = document.getElementById("imagen-contenedor");
-    // Limpiar el contenido anterior
-    contenedor.innerHTML = "";
-    // Crear una nueva imagen
-    var imagen = document.createElement("img");
-    // Establecer la fuente de la imagen
-    imagen.src = src;
-    // Establecer el tamaño de la imagen (opcional)
-    imagen.style.width = "850px"; // Ancho deseado
-    imagen.style.height = "600px"; // Altura deseada
-    // Agregar la imagen al contenedor
-    contenedor.appendChild(imagen);
-    // Mostrar la ventana emergente
-    document.getElementById("ventana-emergente").style.display = "block";
-  }
-  
-  // Función para cerrar la ventana emergente
-  function cerrarVentanaEmergente() {
-    // Ocultar la ventana emergente
-    document.getElementById("ventana-emergente").style.display = "none";
-  }
-
-
