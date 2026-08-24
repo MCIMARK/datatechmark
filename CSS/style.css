@@ -511,9 +511,22 @@ footer p {
   #equipo{
     background: linear-gradient(45deg, #7a8888, #3d4141, #7a8888, #3d4141);
   }
-  .content-card {
-    width: 100%;
-  }
+.content-card {
+  width: 90%;
+  max-width: 350px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.people {
+  height: 60%;
+}
+
+.content-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
   .texto-team {
     font-size: 15px;
