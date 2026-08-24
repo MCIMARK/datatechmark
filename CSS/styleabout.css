@@ -4,7 +4,7 @@
   --color3: rgba(0, 25, 253, 0.623);
   --color4: rgb(255, 255, 255);
   --fondo: rgb(255, 255, 255);
-  --imagendefondo: url(/IMAGENES/about.jpg);
+  --imagendefondo: url(/IMAGENES/about.webp);
   --gradiente: linear-gradient(45deg, #d9e6d8bd,#aab3a9, #d9e6d8bd, #aab3a9, #d9e6d8bd);
   --subtitulos: 25px;
   --titulos: 50px;
@@ -624,3 +624,5 @@ footer p {
     --espacios-contenido: 25px;
   }
 }
+
+
