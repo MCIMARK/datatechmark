@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --color1: rgb(53, 31, 19);
   --color2: rgb(0, 0, 0);
   --color3: rgba(11, 194, 211, 0.623);
@@ -494,5 +494,6 @@ footer p {
     --espacios-contenido: 25px;
   }
 }
+
 
 

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --color1: rgb(0, 0, 0);
   --color2: rgb(21, 1, 136);
   --color3: rgba(0, 25, 253, 0.623);
@@ -501,7 +501,7 @@ nav .enlaces a:hover {
     transform: translate(-50%, -50%);
     background-color: white;
     border: 5px solid black;
-    z-index: 9999; /* Asegura que la ventana emergente esté por encima de otros elementos */
+    z-index: 9999; /* Asegura que la ventana emergente estÃ© por encima de otros elementos */
   }
 
 footer {
@@ -624,5 +624,6 @@ footer p {
     --espacios-contenido: 25px;
   }
 }
+
 
 
