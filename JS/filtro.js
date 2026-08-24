@@ -1,53 +1,44 @@
-$(function () {
-    $('.filter').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-        let valor = $(this).attr('data-nombre');
-        if (valor == 'todos') {
-            $('.cont-work').show('1000');
-        } else {
-            $('.cont-work').not('.' + valor).hide('1000');
-            $('.cont-work').filter('.' + valor).show('1000');
-        }
+document.addEventListener('DOMContentLoaded', function () {
+
+    const filtros = document.querySelectorAll('.filter');
+    const trabajos = document.querySelectorAll('.cont-work');
+
+    filtros.forEach(function (filtro) {
+
+        filtro.addEventListener('click', function () {
+
+            // Activar filtro seleccionado
+            filtros.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            const valor = this.getAttribute('data-nombre');
+
+            // Mostrar todos
+            if (valor === 'todos') {
+
+                trabajos.forEach(function (trabajo) {
+                    trabajo.style.display = '';
+                });
+
+                return;
+            }
+
+            // Filtrar
+            trabajos.forEach(function (trabajo) {
+
+                if (trabajo.classList.contains(valor)) {
+                    trabajo.style.display = '';
+                } else {
+                    trabajo.style.display = 'none';
+                }
+
+            });
+
+        });
+
     });
-    // let equipo = $('#equipo').offset().top,
-    //     servicio = $('#servicio').offset().top,
-    //     trabajo = $('#trabajo').offset().top,
-    //     contacto = $('#contacto').offset().top;
-    
-    // window.addEventListener('resize',function(){
-    //     let equipo = $('#equipo').offset().top,
-    //     servicio = $('#servicio').offset().top,
-    //     trabajo = $('#trabajo').offset().top,
-    //     contacto = $('#contacto').offset().top;
-    // });
-    // $('#enlace-inicio').on('click',function(e){
-    //     e.preventDefault();
-    //     $('html, body').animate({
-    //         scrollTop: 0
-    //     },600);
-    // });
-    // $('#enlace-equipo').on('click',function(e){
-    //     e.preventDefault();
-    //     $('html, body').animate({
-    //         scrollTop: equipo -50
-    //     },600);
-    // });
-    // $('#enlace-servicio').on('click',function(e){
-    //     e.preventDefault();
-    //     $('html, body').animate({
-    //         scrollTop: servicio -50
-    //     },600);
-    // });
-    // $('#enlace-trabajo').on('click',function(e){
-    //     e.preventDefault();
-    //     $('html, body').animate({
-    //         scrollTop: trabajo -50
-    //     },600);
-    // });
-    // $('#enlace-contacto').on('click',function(e){
-    //     e.preventDefault();
-    //     $('html, body').animate({
-    //         scrollTop: contacto -50
-    //     },600);        
-    // });
+
 });
