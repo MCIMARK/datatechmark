@@ -1,0 +1,11 @@
+﻿# Respaldos locales
+IMAGENES/_RESPALDO/
+
+# Archivos temporales
+*.tmp
+*.bak
+*.log
+
+# Archivos de sistema
+Thumbs.db
+.DS_Store
