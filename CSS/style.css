@@ -17,7 +17,7 @@
 
 
 /* =========================================================
-   RESET
+   RESET CSS
    ========================================================= */
 
 html,
@@ -110,6 +110,8 @@ video {
 }
 
 
+/* HTML5 display-role reset */
+
 article,
 aside,
 details,
@@ -142,11 +144,11 @@ q {
 }
 
 
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-  content: "";
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
   content: none;
 }
 
@@ -167,13 +169,14 @@ html {
 
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 
 img {
   vertical-align: top;
-  max-width: 100%;
 }
 
 
@@ -188,7 +191,6 @@ img {
 
 .centrado {
   position: fixed;
-  inset: 0;
 
   width: 100vw;
   height: 100vh;
@@ -198,6 +200,7 @@ img {
   z-index: 100;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
 }
@@ -205,6 +208,7 @@ img {
 
 .lds-spinner {
   display: inline-block;
+
   position: relative;
 
   width: 80px;
@@ -213,19 +217,14 @@ img {
 
 
 .lds-spinner div {
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
   transform-origin: 40px 40px;
 
   animation: lds-spinner 1.2s linear infinite;
 }
 
 
-.lds-spinner div::after {
-  content: "";
+.lds-spinner div:after {
+  content: " ";
 
   display: block;
 
@@ -334,10 +333,15 @@ img {
 
 header {
   width: 100%;
+
   height: 600px;
+
   background: var(--imagendefondo);
+
   background-attachment: fixed;
+
   background-position: center;
+
   background-size: cover;
 }
 
@@ -346,8 +350,6 @@ nav {
   width: 100%;
 
   position: fixed;
-
-  z-index: 10;
 
   text-shadow:
     -1px -1px 0 var(--color4),
@@ -359,13 +361,12 @@ nav {
 
 .nav1 {
   height: 80px;
+
   color: var(--color1);
 }
 
 
 .nav2 {
-  height: 80px;
-
   background:
     linear-gradient(
       45deg,
@@ -374,6 +375,8 @@ nav {
       #7a8888,
       #5fb3b3
     );
+
+  height: 80px;
 
   color: var(--color1);
 }
@@ -385,12 +388,14 @@ nav {
   margin: auto;
 
   width: 100%;
+
+  justify-content: space-between;
+
+  align-items: center;
+
   max-width: 1700px;
 
   height: inherit;
-
-  justify-content: space-between;
-  align-items: center;
 
   overflow: hidden;
 }
@@ -400,9 +405,11 @@ nav .enlaces a {
   display: inline-block;
 
   padding: 5px 0;
+
   margin-right: 25px;
 
   font-size: 20px;
+
   font-weight: 700;
 
   text-decoration: none;
@@ -410,6 +417,7 @@ nav .enlaces a {
   color: inherit;
 
   font-family: "Anta", sans-serif;
+
   font-style: normal;
 }
 
@@ -417,7 +425,7 @@ nav .enlaces a {
 nav .enlaces a:hover {
   border-bottom: 5px solid var(--color1);
 
-  transition: border-bottom 0.3s;
+  transition: 0.3s;
 }
 
 
@@ -427,19 +435,12 @@ nav .enlaces a:hover {
 }
 
 
-.logo img {
-  width: auto;
-}
-
-
 .icono {
   display: none;
 
   font-size: 24px;
 
   padding: 23.5px 20px;
-
-  cursor: pointer;
 }
 
 
@@ -449,24 +450,26 @@ nav .enlaces a:hover {
 
 .textos {
   width: 100%;
+
   height: 100%;
 
   display: flex;
 
   justify-content: center;
-  align-items: center;
 
   flex-direction: column;
 
-  overflow: hidden;
-
-  text-align: center;
+  align-items: center;
 
   text-shadow:
     -1px -1px 0 var(--color4),
     1px -1px 0 var(--color4),
     -1px 1px 0 var(--color4),
     1px 1px 0 var(--color4);
+
+  overflow: hidden;
+
+  text-align: center;
 }
 
 
@@ -502,10 +505,15 @@ nav .enlaces a:hover {
 
 .contenedor {
   margin: auto;
+
   padding: var(--margenes) 0;
+
   width: 90%;
+
   max-width: 1700px;
+
   text-align: center;
+
   overflow: hidden;
 
   text-shadow:
@@ -595,21 +603,19 @@ nav .enlaces a:hover {
 .servicios {
   display: flex;
 
-  justify-content: space-between;
-
-  margin: auto;
-
   color: #ffffff;
 
   font-size: 25px;
+
+  justify-content: space-between;
+
+  margin: auto;
 
   flex-wrap: nowrap;
 }
 
 
 .image-button {
-  display: inline-block;
-
   background: none;
 
   border: none;
@@ -617,12 +623,14 @@ nav .enlaces a:hover {
   cursor: pointer;
 
   padding: 0;
+
   margin: 0;
 }
 
 
 .caja-servicios img {
   width: 100px;
+
   height: 100px;
 
   object-fit: cover;
@@ -657,12 +665,8 @@ nav .enlaces a:hover {
 }
 
 
-/* =========================================================
-   SEPARADOR
-   ========================================================= */
-
 .after::after {
-  content: "";
+  content: '';
 
   display: block;
 
@@ -671,6 +675,7 @@ nav .enlaces a:hover {
   margin-top: var(--espacios);
 
   width: 100px;
+
   height: 2px;
 
   background: var(--color2);
@@ -685,10 +690,15 @@ nav .enlaces a:hover {
 
 #equipo {
   height: auto;
+
   width: auto;
+
   background: var(--imagendefondo);
+
   background-attachment: fixed;
+
   background-position: center;
+
   background-size: cover;
 }
 
@@ -705,9 +715,12 @@ nav .enlaces a:hover {
 .content-card {
   width: 20%;
 
-  height: 400px;
+  box-shadow:
+    0 0 10px 0 var(--color2);
 
   overflow: hidden;
+
+  height: 400px;
 
   background:
     linear-gradient(
@@ -717,9 +730,6 @@ nav .enlaces a:hover {
       #7a8888,
       #5fb3b3
     );
-
-  box-shadow:
-    0 0 10px 0 var(--color2);
 }
 
 
@@ -730,6 +740,7 @@ nav .enlaces a:hover {
 
 .content-card img {
   width: 100%;
+
   height: 100%;
 
   object-fit: scale-down;
@@ -762,10 +773,15 @@ nav .enlaces a:hover {
 
 footer {
   background: var(--imagendefondo);
+
   width: 100%;
+
   height: 600px;
+
   background-attachment: fixed;
+
   background-position: center;
+
   background-size: cover;
 }
 
@@ -797,22 +813,6 @@ footer {
 }
 
 
-.iconos a {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-}
-
-
-.iconos svg {
-  display: block;
-
-  width: 64px;
-  height: 64px;
-}
-
-
 footer p {
   font-family: "Anta", sans-serif;
 
@@ -825,7 +825,7 @@ footer p {
 
 
 /* =========================================================
-   TABLET / MOVIL
+   MOVIL
    ========================================================= */
 
 @media screen and (max-width: 700px) {
@@ -833,7 +833,7 @@ footer p {
   nav .enlaces a {
     display: inline-block;
 
-    padding: 5px;
+    padding: 5px 5px;
 
     margin-right: 15px;
 
@@ -860,17 +860,17 @@ footer p {
 
     top: 80px;
 
+    text-align: center;
+
     left: 0;
+
+    font-size: 10px;
+
+    transition: 0.5s;
 
     width: 0;
 
     overflow: hidden;
-
-    text-align: center;
-
-    font-size: 10px;
-
-    transition: width 0.5s;
 
     background:
       linear-gradient(
@@ -913,6 +913,10 @@ footer p {
   .servicios {
     display: flex;
 
+    color: #ffffff;
+
+    font-size: 25px;
+
     flex-direction: column;
 
     justify-content: space-between;
@@ -920,10 +924,6 @@ footer p {
     margin: auto;
 
     flex-wrap: wrap;
-
-    color: #ffffff;
-
-    font-size: 25px;
   }
 
 
@@ -946,47 +946,6 @@ footer p {
     --margenes: 30px;
   }
 
-
-  /*
-   * En móviles usamos scroll normal.
-   * Evita el coste de background-attachment: fixed.
-   */
-  header,
-  #equipo,
-  footer {
-    background-attachment: scroll;
-  }
-
-
-  /*
-   * El logo del footer puede ocupar más espacio
-   * en pantallas pequeñas.
-   */
-  .marca-logo {
-    width: 60%;
-  }
-
-
-  .marca-logo img {
-    width: 70%;
-  }
-
-
-  .iconos {
-    width: 90%;
-  }
-
-
-  .iconos svg {
-    width: 55px;
-    height: 55px;
-  }
-
-
-  footer p {
-    font-size: 30px;
-  }
-
 }
 
 
@@ -998,28 +957,6 @@ footer p {
 
   :root {
     --espacios-contenido: 25px;
-  }
-
-
-  .textos > h1 {
-    font-size: 40px;
-  }
-
-
-  .textos > h2 {
-    font-size: 18px;
-  }
-
-
-  footer {
-    height: auto;
-
-    min-height: 500px;
-  }
-
-
-  footer p {
-    font-size: 25px;
   }
 
 }
