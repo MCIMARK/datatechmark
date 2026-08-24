@@ -335,8 +335,8 @@ img {
 header {
   width: 100%;
   height: 600px;
-
   background: var(--imagendefondo);
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
@@ -502,15 +502,10 @@ nav .enlaces a:hover {
 
 .contenedor {
   margin: auto;
-
   padding: var(--margenes) 0;
-
   width: 90%;
-
-  max-width: 400px;
-
+  max-width: 1700px;
   text-align: center;
-
   overflow: hidden;
 
   text-shadow:
@@ -690,13 +685,10 @@ nav .enlaces a:hover {
 
 #equipo {
   height: auto;
-
   width: auto;
-
   background: var(--imagendefondo);
-
+  background-attachment: fixed;
   background-position: center;
-
   background-size: cover;
 }
 
@@ -769,14 +761,11 @@ nav .enlaces a:hover {
    ========================================================= */
 
 footer {
-  width: 100%;
-
-  height: 600px;
-
   background: var(--imagendefondo);
-
+  width: 100%;
+  height: 600px;
+  background-attachment: fixed;
   background-position: center;
-
   background-size: cover;
 }
 

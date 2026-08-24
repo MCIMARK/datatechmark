@@ -71,13 +71,28 @@ document.addEventListener('DOMContentLoaded', function () {
     menus();
 
 });
-
-
 /* =========================================
-   SCROLL
+   SCROLL OPTIMIZADO
 ========================================= */
 
-window.addEventListener('scroll', menus);
+let scrollPendiente = false;
+
+window.addEventListener('scroll', function () {
+
+    if (!scrollPendiente) {
+
+        window.requestAnimationFrame(function () {
+
+            menus();
+
+            scrollPendiente = false;
+
+        });
+
+        scrollPendiente = true;
+    }
+
+}, { passive: true });
 
 
 /* =========================================
