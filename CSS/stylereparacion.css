@@ -1,12 +1,12 @@
 ﻿:root {
-  --color1: rgb(73, 27, 1);
-  --color2: rgb(0, 0, 0);
-  --color3: rgba(11, 194, 211, 0.623);
-  --color4: rgb(255, 255, 255);
+ --color1: #b6ceeb;
+  --color2: #edf2f3;
+  --color3: #e3eaeb;
+  --color4: #eaeff1;
   --fondo: rgb(255, 255, 255);
   --imagendefondo: url(/IMAGENES/computadoras.webp);
-  --subtitulos: 25px;
-  --titulos: 50px;
+ --subtitulos: 20px;
+  --titulos: 40px;
   --margenes: 60px;
   --espacios: 10px;
   --espacios-contenido: 45px;
@@ -198,8 +198,6 @@ header {
 nav {
   width: 100%;
   position: fixed;
-  text-shadow: -1px -1px 0 var(--color4), 1px -1px 0 var(--color4),
-  -1px 1px 0 var(--color4), 1px 1px 0 var(--color4);
 }
 
 .nav1 {
@@ -229,11 +227,10 @@ nav .enlaces a {
   padding: 5px 0;
   margin-right: 25px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 900;
   text-decoration: none;
-  /* border-bottom: 5px solid ; */
   color: inherit;
-  font-family: "Anta", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   
 }
@@ -246,7 +243,6 @@ nav .enlaces a:hover {
 .logo,
 .logo img {
   height: 80px;
-  /* box-shadow: 4px 2px 2px var(--color2); */
 }
 
 .icono {
@@ -262,30 +258,24 @@ nav .enlaces a:hover {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* color: var(--color2); */
-  text-shadow: -1px -1px 0 var(--color4), 1px -1px 0 var(--color4),
-    -1px 1px 0 var(--color4), 1px 1px 0 var(--color4);
   overflow: hidden;
   text-align: center;
-	/* -webkit-text-stroke: 1px #282828;
-	text-shadow: 0px 4px 4px #00f3fc; */
 }
 
 .textos>h1 {
-  font-size: 100px;
-  font-family: "Anta", sans-serif;
-  font-weight: 700;
+  font-size: 70px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
   font-style:italic;
   color: var(--color2);
 }
 
 .textos>h2 {
-  font-size: 45px;
-  font-family: "Lobster", sans-serif;
-  font-weight: 400;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
   font-style: normal;
   color: var(--color1)
-  /* color: var(--color1); */
 }
 
 /*main*/
@@ -296,8 +286,6 @@ nav .enlaces a:hover {
   max-width:400;
   text-align: center;
   overflow: hidden;
-  text-shadow: -1px -1px 0 var(--color4), 1px -1px 0 var(--color4),
-  -1px 1px 0 var(--color4), 1px 1px 0 var(--color4);
 }
 .contenedores {
   margin: auto;
@@ -306,21 +294,19 @@ nav .enlaces a:hover {
   max-width: 1000px;
   text-align: center;
   overflow: hidden;
-  text-shadow: -1px -1px 0 var(--color4), 1px -1px 0 var(--color4),
-  -1px 1px 0 var(--color4), 1px 1px 0 var(--color4);
 }
 .contenedor h3 {
   font-size: var(--titulos);
 	color:var(--color2);
-  font-family: "Anta", sans-serif;
-  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
   font-style: italic;
 }
 
 .contenedor p {
   font-size: var(--subtitulos);
-  font-family: "Lobster", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
   font-style: normal;
   color: var(--color1);
 }
@@ -328,17 +314,6 @@ nav .enlaces a:hover {
   font-size: var(--subtitulos);
   font-weight: 900;
   color: var(--color2);
-}
-
-.after::after {
-  content: '';
-  display: block;
-  margin: auto;
-  margin-top: var(--espacios);
-  width: 100px;
-  height: 2px;
-  background: var(--color2);
-  margin-bottom: var(--espacios-contenido);
 }
 
 .about {
@@ -349,11 +324,12 @@ nav .enlaces a:hover {
 
 .servicios {
   display: flex;
-  /* color: #ffffff; */
+  color: #ffffff;
   font-size: 25px;
   justify-content: space-between;
   margin: auto;
   flex-wrap: nowrap;
+  gap: 20px;
 }
 .image-button {
   background: none;
@@ -371,21 +347,30 @@ nav .enlaces a:hover {
 .caja-servicios>h4 {
   margin-bottom: var(--espacios);
   color: var(--color2);
-  font-family: "Anta", sans-serif;
-  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
   font-style: italic;
 }
 
 .caja-servicios>p {
-  text-align:center;
+  text-align:justify;
   color: var(--color1);
   font-size: 20px;
-  font-family: "Lobster", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
   font-style: normal;
 }
 
-
+.after::after {
+  content: '';
+  display: block;
+  margin: auto;
+  margin-top: var(--espacios);
+  width: 100px;
+  height: 2px;
+  background: var(--color2);
+  margin-bottom: var(--espacios-contenido);
+}
 
 footer {
   background:var(--imagendefondo);
@@ -415,15 +400,11 @@ footer {
 }
 
 footer p {
-  font-family: "Anta", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 50px;
   font-style: italic;
 }
-/* footer .contenedores p{
-  color: rgb(0, 0, 0);
-} */
-
 @media screen and (max-width: 700px) {
   nav .enlaces a {
     display: inline-block;
