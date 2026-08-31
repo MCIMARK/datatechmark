@@ -381,7 +381,7 @@ const formStatus =
 
 
 const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbzWpDVJTnhXVGNbwQTfbt2lcDxXJ7pZrTiYhILQnJXknMKGYcAQ2DqSszfzMtfRxjrx/exec";
+    "https://script.google.com/macros/s/AKfycbwWKbm9GLEMVv8vRGoqlHDzQ39xpotb2S1r4MQ5zWfRTOWzHdf4HId9_4Vmd4ny-Oht/exec";
 
 
 if (contactForm) {
