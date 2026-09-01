@@ -632,5 +632,252 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach(element => {
     revealObserver.observe(element);
 });
+/* =====================================
+   LIGHTBOX - EXPERIENCIA
+===================================== */
 
+const experienceCards =
+    document.querySelectorAll(".experience-card");
+
+const experienceLightbox =
+    document.querySelector("#experienceLightbox");
+
+const experienceLightboxImage =
+    document.querySelector("#experienceLightboxImage");
+
+const experienceLightboxClose =
+    document.querySelector("#experienceLightboxClose");
+
+const experienceLightboxBackdrop =
+    document.querySelector(".experience-lightbox-backdrop");
+
+
+function openExperienceLightbox(image) {
+
+    if (!experienceLightbox || !experienceLightboxImage) {
+        return;
+    }
+
+    experienceLightboxImage.src = image.src;
+    experienceLightboxImage.alt = image.alt;
+
+    experienceLightbox.classList.add("active");
+
+    experienceLightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add("modal-open");
+}
+
+
+function closeExperienceLightbox() {
+
+    if (!experienceLightbox || !experienceLightboxImage) {
+        return;
+    }
+
+    experienceLightbox.classList.remove("active");
+
+    experienceLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove("modal-open");
+
+    setTimeout(() => {
+        experienceLightboxImage.src = "";
+    }, 300);
+}
+
+/* CERRAR CON X */
+
+if (experienceLightboxClose) {
+
+    experienceLightboxClose.addEventListener(
+        "click",
+        closeExperienceLightbox
+    );
+
+}
+
+
+/* CERRAR HACIENDO CLIC FUERA */
+
+if (experienceLightboxBackdrop) {
+
+    experienceLightboxBackdrop.addEventListener(
+        "click",
+        closeExperienceLightbox
+    );
+
+}
+
+
+/* CERRAR CON ESC */
+
+document.addEventListener("keydown", event => {
+
+    if (
+        event.key === "Escape" &&
+        experienceLightbox &&
+        experienceLightbox.classList.contains("active")
+    ) {
+
+        closeExperienceLightbox();
+
+    }
+
+});
+/* =====================================
+   NAVEGACIÓN LIGHTBOX
+===================================== */
+
+const experienceImages = Array.from(
+    document.querySelectorAll(".experience-card img")
+);
+
+const experienceLightboxPrev =
+    document.querySelector("#experienceLightboxPrev");
+
+const experienceLightboxNext =
+    document.querySelector("#experienceLightboxNext");
+
+const experienceLightboxCounter =
+    document.querySelector("#experienceLightboxCounter");
+
+let currentExperienceIndex = 0;
+
+
+function showExperienceImage(index) {
+
+    if (
+        !experienceLightboxImage ||
+        experienceImages.length === 0
+    ) {
+        return;
+    }
+
+    if (index < 0) {
+        index = experienceImages.length - 1;
+    }
+
+    if (index >= experienceImages.length) {
+        index = 0;
+    }
+
+    currentExperienceIndex = index;
+
+    const image =
+        experienceImages[currentExperienceIndex];
+
+    experienceLightboxImage.src =
+        image.src;
+
+    experienceLightboxImage.alt =
+        image.alt;
+    if (experienceLightboxCounter) {
+
+        experienceLightboxCounter.textContent =
+            `${currentExperienceIndex + 1} / ${experienceImages.length}`;
+
+    }
+    
+}
+
+
+experienceCards.forEach((card, index) => {
+
+    card.addEventListener("click", () => {
+
+        currentExperienceIndex = index;
+
+        showExperienceImage(
+            currentExperienceIndex
+        );
+
+        experienceLightbox.classList.add(
+            "active"
+        );
+
+        experienceLightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "modal-open"
+        );
+
+    });
+
+});
+
+
+if (experienceLightboxPrev) {
+
+    experienceLightboxPrev.addEventListener(
+        "click",
+        event => {
+
+            event.stopPropagation();
+
+            showExperienceImage(
+                currentExperienceIndex - 1
+            );
+
+        }
+    );
+
+}
+
+
+if (experienceLightboxNext) {
+
+    experienceLightboxNext.addEventListener(
+        "click",
+        event => {
+
+            event.stopPropagation();
+
+            showExperienceImage(
+                currentExperienceIndex + 1
+            );
+
+        }
+    );
+
+}
+
+
+/* TECLADO */
+
+document.addEventListener("keydown", event => {
+
+    if (
+        !experienceLightbox ||
+        !experienceLightbox.classList.contains("active")
+    ) {
+        return;
+    }
+
+    if (event.key === "ArrowLeft") {
+
+        showExperienceImage(
+            currentExperienceIndex - 1
+        );
+
+    }
+
+    if (event.key === "ArrowRight") {
+
+        showExperienceImage(
+            currentExperienceIndex + 1
+        );
+
+    }
+
+});
 });

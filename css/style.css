@@ -4494,18 +4494,45 @@ body.modal-open {
 
 .contact {
 
+    position: relative;
+
     padding: 150px 0;
 
     background:
         radial-gradient(
             circle at 15% 50%,
-            rgba(0, 200, 255, 0.07),
-            transparent 30%
+            rgba(0, 200, 255, 0.09),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(0, 200, 255, 0.035),
+            transparent 25%
         ),
         var(--background);
 
 }
+.contact::before {
 
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: min(84%, 1200px);
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 200, 255, 0.30),
+        transparent
+    );
+
+}
 
 .contact-grid {
 
@@ -5403,4 +5430,432 @@ body.menu-open {
         transition: none;
     }
 
+}
+
+/* =====================================
+   EXPERIENCIA EN CAMPO
+===================================== */
+
+.experience-section {
+    padding: 130px 8% 100px;
+    background:
+        linear-gradient(
+            to bottom,
+            #020406 0%,
+            #05080c 120px
+        );
+}
+
+.experience-section .section-header {
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+.experience-section .section-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #00c8ff;
+}
+
+.experience-section h2 {
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    margin-bottom: 18px;
+}
+
+.experience-section .section-header p {
+    max-width: 700px;
+    line-height: 1.7;
+    color: #a9b3bd;
+}
+
+
+/* GALERÍA */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.experience-card {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 200, 255, 0.14);
+    background: #0a0e13;
+}
+
+.experience-card-wide {
+    grid-column: 1 / -1;
+    min-height: 480px;
+}
+
+
+/* IMAGEN */
+
+.experience-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+
+    filter:
+        brightness(0.68)
+        contrast(1.08)
+        saturate(0.82);
+
+    transform: scale(1.02);
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+/* DEGRADADO */
+
+.experience-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(2, 6, 10, 0.95) 0%,
+            rgba(2, 6, 10, 0.55) 38%,
+            rgba(2, 6, 10, 0.08) 72%
+        );
+
+    z-index: 1;
+}
+
+
+/* INFORMACIÓN */
+
+.experience-info {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+    z-index: 2;
+
+    transform: translateY(8px);
+
+    transition: transform 0.5s ease;
+}
+
+.experience-info h3 {
+    font-size: 1.45rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.experience-info p {
+    max-width: 540px;
+    line-height: 1.6;
+    color: #b8c2cc;
+}
+
+
+/* HOVER */
+
+.experience-card:hover img {
+    transform: scale(1.08);
+
+    filter:
+        brightness(0.88)
+        contrast(1.06)
+        saturate(1);
+}
+
+.experience-card:hover .experience-info {
+    transform: translateY(0);
+}
+
+.experience-card:hover {
+    border-color: rgba(0, 200, 255, 0.45);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .experience-section {
+        padding: 100px 6% 80px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card,
+    .experience-card-wide {
+        grid-column: auto;
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .experience-section {
+        padding: 90px 20px 70px;
+    }
+
+    .experience-card,
+    .experience-card-wide {
+        min-height: 360px;
+    }
+
+    .experience-info {
+        left: 20px;
+        right: 20px;
+        bottom: 22px;
+    }
+
+    .experience-info h3 {
+        font-size: 1.25rem;
+    }
+}
+.experience-img-electricidad {
+    object-position: center top !important;
+}
+/* =====================================
+   LIGHTBOX - EXPERIENCIA
+===================================== */
+
+.experience-card {
+    cursor: pointer;
+}
+
+.experience-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.experience-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* FONDO */
+
+.experience-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+}
+
+
+/* CONTENEDOR */
+
+.experience-lightbox-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1100px;
+    max-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* IMAGEN GRANDE */
+
+.experience-lightbox-content img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(0, 200, 255, 0.35);
+
+    box-shadow:
+        0 0 40px rgba(0, 200, 255, 0.12);
+
+    transform: scale(0.96);
+
+    transition: transform 0.35s ease;
+}
+
+.experience-lightbox.active
+.experience-lightbox-content img {
+    transform: scale(1);
+}
+
+
+/* BOTÓN CERRAR */
+
+.experience-lightbox-close {
+    position: absolute;
+
+    top: -18px;
+    right: -18px;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(0, 200, 255, 0.45);
+    border-radius: 50%;
+
+    background: #05080c;
+    color: #ffffff;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 3;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.experience-lightbox-close:hover {
+    color: #00c8ff;
+    border-color: #00c8ff;
+    transform: rotate(90deg);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .experience-lightbox {
+        padding: 18px;
+    }
+
+    .experience-lightbox-content img {
+        max-height: 80vh;
+    }
+
+    .experience-lightbox-close {
+        top: -15px;
+        right: -5px;
+    }
+}
+/* =====================================
+   FLECHAS LIGHTBOX
+===================================== */
+
+.experience-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 200, 255, 0.35);
+    border-radius: 50%;
+
+    background: rgba(5, 8, 12, 0.85);
+    color: #ffffff;
+
+    font-size: 38px;
+    line-height: 1;
+
+    cursor: pointer;
+    z-index: 4;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.experience-lightbox-prev {
+    left: -75px;
+}
+
+.experience-lightbox-next {
+    right: -75px;
+}
+
+.experience-lightbox-nav:hover {
+    color: #00c8ff;
+    border-color: #00c8ff;
+    background: #05080c;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    .experience-lightbox-prev {
+        left: 10px;
+    }
+
+    .experience-lightbox-next {
+        right: 10px;
+    }
+
+    .experience-lightbox-nav {
+        width: 44px;
+        height: 44px;
+
+        font-size: 32px;
+
+        background: rgba(5, 8, 12, 0.75);
+    }
+}
+/* =====================================
+   CONTADOR LIGHTBOX
+===================================== */
+
+.experience-lightbox-counter {
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+
+    transform: translateX(-50%);
+
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    color: #a9b3bd;
+
+    z-index: 4;
+}
+
+.experience-lightbox-counter::first-letter {
+    color: #00c8ff;
 }
