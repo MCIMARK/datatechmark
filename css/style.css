@@ -6001,3 +6001,543 @@ body.menu-open {
     height: 30px;
     fill: currentColor;
 }
+/* =========================================
+   RECURSOS
+========================================= */
+
+.resources {
+
+    padding:
+        150px 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 0%,
+            rgba(0, 200, 255, 0.07),
+            transparent 32%
+        ),
+        #05090d;
+
+}
+
+
+.resources-header {
+
+    max-width:
+        760px;
+
+    margin-bottom:
+        60px;
+
+}
+
+
+.resources-header h2 {
+
+    margin-top:
+        12px;
+
+    font-size:
+        clamp(2.4rem, 5vw, 4.3rem);
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -3px;
+
+}
+
+
+.resources-header h2 span {
+
+    color:
+        var(--accent);
+
+}
+
+
+.resources-description {
+
+    max-width:
+        650px;
+
+    margin-top:
+        22px;
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.7;
+
+}
+
+
+/* GRID */
+
+.resources-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.3fr 0.7fr;
+
+    gap:
+        20px;
+
+}
+
+
+/* CARD */
+
+.resource-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        430px;
+
+    padding:
+        42px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,200,255,0.06),
+            transparent 42%
+        ),
+        #080e14;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+.resource-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        320px;
+
+    height:
+        320px;
+
+    right:
+        -160px;
+
+    top:
+        -160px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0,200,255,0.07);
+
+    filter:
+        blur(30px);
+
+}
+
+
+.resource-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(0,200,255,0.45);
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,0.28);
+
+}
+
+
+/* PARTE SUPERIOR */
+
+.resource-top {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        45px;
+
+}
+
+
+.resource-number {
+
+    color:
+        rgba(255,255,255,0.28);
+
+    font-size:
+        0.8rem;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.resource-status {
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid rgba(0,200,255,0.35);
+
+    border-radius:
+        50px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.resource-status.coming {
+
+    color:
+        var(--text-muted);
+
+    border-color:
+        rgba(255,255,255,0.12);
+
+}
+
+
+/* ICONO */
+
+.resource-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        30px;
+
+    border:
+        1px solid rgba(0,200,255,0.35);
+
+    border-radius:
+        50%;
+
+    color:
+        var(--accent);
+
+    font-size:
+        1.25rem;
+
+}
+
+
+/* TEXTO */
+
+.resource-category {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.resource-card h3 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        2rem;
+
+}
+
+
+.resource-text {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        600px;
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.7;
+
+}
+
+
+/* CARACTERÍSTICAS */
+
+.resource-features {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    margin:
+        26px 0;
+
+}
+
+
+.resource-features span {
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius:
+        6px;
+
+    color:
+        #bac4cc;
+
+    font-size:
+        0.72rem;
+
+}
+
+
+/* BOTÓN */
+
+.resource-button {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    margin-top:
+        10px;
+
+    padding:
+        13px 20px;
+
+    border-radius:
+        6px;
+
+    background:
+        var(--accent);
+
+    color:
+        #02070a;
+
+    text-decoration:
+        none;
+
+    font-size:
+        0.86rem;
+
+    font-weight:
+        700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.resource-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(0,200,255,0.18);
+
+}
+
+
+.resource-button span {
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.resource-button:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* PRÓXIMAMENTE */
+
+.resource-coming {
+
+    opacity:
+        0.68;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .resources {
+
+        padding:
+            100px 0;
+
+    }
+
+
+    .resources-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .resource-card {
+
+        min-height:
+            auto;
+
+        padding:
+            34px 28px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .resources-header h2 {
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .resource-card h3 {
+
+        font-size:
+            1.6rem;
+
+    }
+
+}
